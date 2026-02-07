@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Landing from "./pages/Landing";
+import FlightSearch from "./pages/FlightSearch";
+import FlightBooking from "./pages/FlightBooking";
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/flight-search" element={<FlightSearch />} />
+        <Route path="/flight-booking" element={<FlightBooking />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
